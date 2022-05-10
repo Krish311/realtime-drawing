@@ -14,14 +14,6 @@ function setup(){
     poseNet = ml5.poseNet(video, modelLoaded);
     poseNet.on('pose', gotPoses);
 }
-function draw(){
-    background('#ABB2B9');
-
-    document.getElementById('square_side').innerHTML = "width and heigth the square will be = " + answer +"px";
-    Fill('F90309');
-    stroke('F90309');
-    square(noseX, noseY, answer);
-}
 
 function modelLoaded(){
     console.log("PoseNet Is Intialized!");
@@ -42,4 +34,13 @@ function gotPoses(results)
    answer = floor(elftWristX - rightWristX);
    console.log("leftWristX = " + leftWristX + "rightWristX = " + rightWristX + "answer = " +answer);
  }
+}
+
+function draw(){
+    background('#969A97');
+
+    document.getElementById('square_side').innerHTML = "width and heigth the square will be = " + answer +"px";
+    Fill('F90309');
+    stroke('F90309');
+    square(noseX, noseY, answer);
 }
